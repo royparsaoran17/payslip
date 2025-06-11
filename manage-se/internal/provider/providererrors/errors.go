@@ -8,6 +8,7 @@ import (
 
 var (
 	ErrUserNotFound = NewError("user_not_found", http.StatusBadRequest)
+	ErrRoleNotFound = NewError("user_role_found", http.StatusBadRequest)
 )
 
 type Error struct {

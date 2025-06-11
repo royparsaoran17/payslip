@@ -27,6 +27,15 @@ func (s *service) GetAllUser(ctx context.Context, meta *common.Metadata) ([]user
 	return users, nil
 }
 
+func (s *service) GetUsetByID(ctx context.Context, userID string) (*user.User, error) {
+	users, err := s.provider.User.GetUserByID(ctx, userID)
+	if err != nil {
+		return nil, errors.Wrap(err, "getting all users ")
+	}
+
+	return users, nil
+}
+
 func (s *service) UpdateUser(ctx context.Context, userID string, input presentations.UserUpdate) error {
 	_, err := s.provider.User.UpdateUser(ctx, userID, input)
 	if err != nil {

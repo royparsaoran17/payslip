@@ -98,6 +98,7 @@ func Authorize(authService auth.Auth, roleNames ...string) MiddlewareFunc {
 			ID:     user.ID.String(),
 			Name:   user.Name,
 			Phone:  user.Phone,
+			Email:  user.Email,
 			RoleID: user.RoleID.String(),
 			Role:   user.Role,
 		})

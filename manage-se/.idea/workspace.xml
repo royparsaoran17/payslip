@@ -5,8 +5,239 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83df1fc7-9655-4004-b628-f7e25079cc5b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/internal/provider/user/user_update.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/internal/provider/user/user_update_role.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/provider/user/user_get_by_id.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/ucase/role/role_create.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/ucase/role/role_update.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/ucase/user/user_create.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/ucase/user/user_get_by_id.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/internal/ucase/user/user_update.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/cmd/genx/gen.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/cmd/http/http.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/cmd/migration/db.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/cmd/root.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/config/app.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/config/app.yaml.dist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/config/msg.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/config/vault_template.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/deployment/docker-compose.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/deployment/dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/deployment/dockerfile-local" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/deployment/live-dev.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/go.sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/appctx/cfg.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/appctx/data.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/appctx/response.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/appctx/validation_message.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/bootstrap/database.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/bootstrap/logger.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/bootstrap/msg.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/bootstrap/open_tracing.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/bootstrap/postgres.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/bootstrap/pubsub.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/bootstrap/redis.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/common/hash.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/common/metadata.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/common/paging.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/common/string.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/common/timeutil.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/consts/config.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/consts/ctx_key.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/consts/date_layout.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/consts/environment.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/consts/error.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/consts/header.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/consts/lang.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/consts/log_field.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/consts/paging.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/consts/rc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/consts/resp.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/consts/svc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/entity/order.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/entity/order_item.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/entity/payment.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/entity/product.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/entity/stock_reservation.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/entity/user.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/entity/warehouse.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/handler/http.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/middleware/auth_middleware.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/middleware/content_type.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/middleware/errors.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/middleware/middleware.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/middleware/signature.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/presentations/order.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/presentations/order_item.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/presentations/payment.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/presentations/request.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/presentations/stock_reservation.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/contract.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/contract_repo.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/order/order.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/order/order_create.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/order/order_find_by_id.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/order/order_get_all.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/order/order_update.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/orderitem/order_item.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/orderitem/order_item_create.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/orderitem/order_item_find_by_id.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/orderitem/order_item_get_all_by_order_id.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/payment/payment.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/payment/payment_create.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/payment/payment_find_by_id.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/payment/payment_get_all.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/product/product.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/product/product_find_by_id.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/product/product_get_stock_detail.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/stockreservation/stock_reservation.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/stockreservation/stock_reservation_create.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/stockreservation/stock_reservation_find_by_id.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/stockreservation/stock_reservation_get_all.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/user/user.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/user/user_find_by_id.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/warehouse/warehouse.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/warehouse/warehouse_get_by_shop_id.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/repooption/tx_options.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/repository.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/router/contract.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/router/router.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/router/router_order.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/server/contract.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/server/server.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/service/order/order_contract.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/service/order/order_service.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/typex/file.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/ucase/contract/ucase.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/ucase/health.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/ucase/health_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/ucase/order/order_create.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/ucase/order/order_get_all.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/ucase/order/order_get_by_id.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/ucase/order/order_payment.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/validator/rules.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/builderx/entity.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/builderx/mysql.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/builderx/postgres.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/builderx/transformer.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/builderx/util.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/builderx/util_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/cache/cache.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/cache/redis_apm_hook.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/civil/civil.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/databasex/connection.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/databasex/contract.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/databasex/databasex.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/databasex/db_multi.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/databasex/db_single.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/databasex/error.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/databasex/migration.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/duration/duration.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/duration/duration_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/file/file.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/generator/snowflake.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/hashx/hmac.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/hashx/hmac_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/hashx/md.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/hashx/md_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/hashx/pbkdf2.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/hashx/sha.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/hashx/sha_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/httpclientx/client.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/httpx/header.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/httpx/header_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/httpx/http_client.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/httpx/http_client_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/httpx/request.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/httpx/response.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/httpx/response_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/jwt/error.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/jwt/jwt.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/logger/cfg.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/logger/constant.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/logger/environment.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/logger/formatter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/logger/logging.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/logger/setup.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/mariadb/contract.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/mariadb/create_session.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/mariadb/maria.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/mariadb/maria_master_slave.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/mariadb/migration.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/msgx/msg.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/postgres/contract.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/postgres/migration.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/postgres/postgres.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/postgres/postgres_error.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/pubsubx/google.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/pubsubx/option.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/pubsubx/pubsub.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/routerkit/mux.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/routerkit/option.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/routerkit/util.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/storage/aws_s3.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/storage/file_system.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/storage/gcs.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/storage/noop.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/storage/storage.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/structgen/dto.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/structgen/gen.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/structgen/generator.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/structgen/repo.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/structgen/schema.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/structgen/type.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/structgen/ucase_list.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/structgen/ucase_store.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/structgen/ucase_update.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/structgen/util.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/strx/string.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/strx/string_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/tracer/tracer.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/util/array.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/util/array_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/util/checker.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/util/checker_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/util/dump.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/util/dump_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/util/env_translator.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/util/env_translator_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/util/helper.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/util/helper_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/util/ip.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/util/parse_date.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/util/parse_date_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/util/random_generator.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/util/random_generator_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/util/replacer.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/util/replacer_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/util/str.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/util/str_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/util/type.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/util/type_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/util/util.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/util/util_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/pkg/validationerror/error.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/entity/customer.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/entity/customer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/middleware/auth_middleware.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/middleware/auth_middleware.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/presentations/role.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/presentations/role.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/presentations/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/presentations/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/provider/contract.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/provider/contract.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/provider/providererrors/errors.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/provider/providererrors/errors.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/provider/user/user_update_role.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/provider/user/user_update_role.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/router/router_role.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/router/router_role.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/router/router_user.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/router/router_user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/service/role/role_contract.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/service/role/role_contract.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/service/role/role_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/service/role/role_service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/service/user/user_contract.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/service/user/user_contract.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/service/user/user_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/service/user/user_service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/internal/ucase/user/user_get_all.go" beforeDir="false" afterPath="$PROJECT_DIR$/internal/ucase/user/user_get_all.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-se/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../user-se/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +280,7 @@
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "/Users/royparsaoran/Roy/PlayGround/payslip/manage-se/internal/provider/user",
+    "last_opened_file_path": "/Users/royparsaoran/Roy/PlayGround/payslip/manage-se/internal/ucase/role",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
@@ -58,11 +289,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/internal/ucase/role" />
       <recent name="$PROJECT_DIR$/internal/provider/user" />
+      <recent name="$PROJECT_DIR$/internal/ucase/user" />
       <recent name="$PROJECT_DIR$/internal/ucase/order" />
       <recent name="$PROJECT_DIR$/internal/ucase" />
-      <recent name="$PROJECT_DIR$/internal/router" />
-      <recent name="$PROJECT_DIR$/internal/service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/internal/service/customer" />

@@ -14,7 +14,9 @@ type User interface {
 	CreateUser(ctx context.Context, input presentations.UserCreate) (*user.UserDetail, error)
 	UpdateUser(ctx context.Context, userID string, input presentations.UserUpdate) (*user.UserDetail, error)
 	GetListUsers(ctx context.Context, meta *common.Metadata) ([]user.User, error)
+	GetUserByID(ctx context.Context, userID string) (*user.User, error)
 
 	GetListRoles(ctx context.Context) ([]user.Role, error)
 	CreateRole(ctx context.Context, input presentations.RoleCreate) (*user.Role, error)
+	UpdateRole(ctx context.Context, roleID string, input presentations.RoleUpdate) (*user.Role, error)
 }

@@ -13,7 +13,7 @@ import (
 )
 
 func (c *client) UpdateRole(ctx context.Context, roleID string, input presentations.RoleUpdate) (*Role, error) {
-	urlEndpoint := c.endpoint("/internal/v1/roles" + roleID)
+	urlEndpoint := c.endpoint("/internal/v1/roles/" + roleID)
 
 	var request bytes.Buffer
 	err := json.NewEncoder(&request).Encode(input)

@@ -6,6 +6,7 @@ type UserContext struct {
 	ID     string    `json:"id" db:"id"`
 	Name   string    `json:"name" db:"name"`
 	Phone  string    `json:"phone" db:"phone"`
+	Email  string    `json:"email" db:"email"`
 	RoleID string    `json:"role_id" db:"role_id"`
 	Role   user.Role `json:"role" db:"role"`
 }

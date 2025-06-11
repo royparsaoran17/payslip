@@ -33,12 +33,6 @@ func (r userGetAll) Serve(data *appctx.Data) appctx.Response {
 
 	metaData.DateRange = metaDateRange
 
-	//user, ok := ctx.Value(consts.CtxUserAuth).(entity.UserContext)
-	//if !ok {
-	//	logger.Error(errors.New("user data not exist in context"))
-	//	return *responder.WithCode(http.StatusInternalServerError).WithMessage(http.StatusText(http.StatusInternalServerError))
-	//}
-
 	users, err := r.service.GetAllUser(ctx, &metaData)
 	if err != nil {
 		errCause := errors.Cause(err)

@@ -2,6 +2,7 @@ package role
 
 import (
 	"context"
+	"manage-se/internal/presentations"
 	"manage-se/internal/provider"
 	"manage-se/internal/provider/user"
 
@@ -23,4 +24,22 @@ func (s *service) GetAllRole(ctx context.Context) ([]user.Role, error) {
 	}
 
 	return roles, nil
+}
+
+func (s *service) UpdateRole(ctx context.Context, roleID string, input presentations.RoleUpdate) error {
+	_, err := s.provider.User.UpdateRole(ctx, roleID, input)
+	if err != nil {
+		return nil
+	}
+
+	return nil
+}
+
+func (s *service) CreateRole(ctx context.Context, input presentations.RoleCreate) error {
+	_, err := s.provider.User.CreateRole(ctx, input)
+	if err != nil {
+		return nil
+	}
+
+	return nil
 }
