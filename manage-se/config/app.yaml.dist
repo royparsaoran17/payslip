@@ -10,11 +10,10 @@ app:
   jwt_key: "${APP_JWT_KEY}"
   default_lang: "${APP_DEFAULT_LANG}"
 
-
 provider:
   auth:
     base_url: "${PROVIDER_AUTH_BASE_URL}"
-  image:
+  payroll:
     base_url: "${PROVIDER_IMAGE_BASE_URL}"
 
 logger:

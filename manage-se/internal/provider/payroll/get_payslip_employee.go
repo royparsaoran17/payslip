@@ -1,46 +1,44 @@
-package user
+package payroll
 
 import (
 	"bytes"
 	"context"
 	"encoding/json"
+	"fmt"
 	"github.com/pkg/errors"
 	"io"
-	"manage-se/internal/presentations"
+	"manage-se/internal/entity"
 	"manage-se/internal/provider/providererrors"
-	"manage-se/pkg/httpx"
 	"net/http"
 )
 
-func (c *client) CreateUser(ctx context.Context, input presentations.UserCreate) (*UserDetail, error) {
-	urlEndpoint := c.endpoint("/internal/v1/users")
+func (c *client) GetPayslipEmployee(ctx context.Context, employeeID, periodID string) ([]entity.Payslip, error) {
+	urlEndpoint := c.endpoint("/internal/v1/employee" + employeeID + "/payslip")
 
-	var request bytes.Buffer
-	err := json.NewEncoder(&request).Encode(input)
+	req, err := http.NewRequestWithContext(ctx, http.MethodGet, urlEndpoint, nil)
 	if err != nil {
-		return nil, errors.Wrap(err, "new encoder encode")
+		return nil, errors.Wrap(err, "new request failed")
 	}
 
-	req, err := http.NewRequestWithContext(ctx, http.MethodPost, urlEndpoint, &request)
-	if err != nil {
-		return nil, errors.Wrap(err, "new request with context")
-	}
+	q := req.URL.Query()
 
-	req.Header.Set(httpx.ContentType, httpx.MediaTypeJSON)
+	q.Set("period_id", periodID)
 
+	req.URL.RawQuery = q.Encode()
 	res, err := c.dep.HttpClient.Do(req)
 	if err != nil {
-		return nil, errors.Wrap(err, "do request")
+		return nil, errors.Wrap(err, fmt.Sprintf("doing http request to %s", req.URL))
 	}
 
+	// Re-usable response body for logging
 	rawBody, _ := io.ReadAll(res.Body)
 	res.Body.Close() // must close
 	res.Body = io.NopCloser(bytes.NewBuffer(rawBody))
 
 	switch res.StatusCode {
-	case http.StatusCreated, http.StatusOK:
+	case http.StatusOK:
 		body := struct {
-			Data UserDetail `json:"data"`
+			Data []entity.Payslip `json:"data"`
 		}{}
 
 		err = json.Unmarshal(rawBody, &body)
@@ -48,7 +46,7 @@ func (c *client) CreateUser(ctx context.Context, input presentations.UserCreate)
 			return nil, providererrors.NewErrRequestWithResponse(req, res)
 		}
 
-		return &body.Data, nil
+		return body.Data, nil
 
 	default:
 		bodyErr := providererrors.Error{}
@@ -59,6 +57,5 @@ func (c *client) CreateUser(ctx context.Context, input presentations.UserCreate)
 
 		bodyErr.Code = res.StatusCode
 		return nil, bodyErr
-
 	}
 }

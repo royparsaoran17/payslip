@@ -3,13 +3,13 @@ package provider
 import (
 	"manage-se/internal/appctx"
 	"manage-se/internal/provider/dependencies"
-	"manage-se/internal/provider/user"
+	"manage-se/internal/provider/payroll"
 	"net/http"
 	"time"
 )
 
 type Provider struct {
-	User User
+	Payroll Payroll
 }
 
 func NewProviders(cfg *appctx.Provider, options ...Option) *Provider {
@@ -20,7 +20,7 @@ func NewProviders(cfg *appctx.Provider, options ...Option) *Provider {
 	}
 
 	return &Provider{
-		User: user.NewClient(&cfg.User, dep),
+		Payroll: payroll.NewClient(&cfg.Payroll, dep),
 	}
 }
 

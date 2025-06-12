@@ -1,4 +1,4 @@
-package user
+package payroll
 
 import (
 	"bytes"
@@ -12,25 +12,25 @@ import (
 	"net/http"
 )
 
-func (c *client) CreateUser(ctx context.Context, input presentations.UserCreate) (*UserDetail, error) {
-	urlEndpoint := c.endpoint("/internal/v1/users")
+func (c *client) CreateReimbursement(ctx context.Context, input presentations.ReimbursementCreate) error {
+	urlEndpoint := c.endpoint("/internal/v1/reimbursement")
 
 	var request bytes.Buffer
 	err := json.NewEncoder(&request).Encode(input)
 	if err != nil {
-		return nil, errors.Wrap(err, "new encoder encode")
+		return errors.Wrap(err, "new encoder encode")
 	}
 
 	req, err := http.NewRequestWithContext(ctx, http.MethodPost, urlEndpoint, &request)
 	if err != nil {
-		return nil, errors.Wrap(err, "new request with context")
+		return errors.Wrap(err, "new request with context")
 	}
 
 	req.Header.Set(httpx.ContentType, httpx.MediaTypeJSON)
 
 	res, err := c.dep.HttpClient.Do(req)
 	if err != nil {
-		return nil, errors.Wrap(err, "do request")
+		return errors.Wrap(err, "do request")
 	}
 
 	rawBody, _ := io.ReadAll(res.Body)
@@ -39,26 +39,17 @@ func (c *client) CreateUser(ctx context.Context, input presentations.UserCreate)
 
 	switch res.StatusCode {
 	case http.StatusCreated, http.StatusOK:
-		body := struct {
-			Data UserDetail `json:"data"`
-		}{}
-
-		err = json.Unmarshal(rawBody, &body)
-		if err != nil {
-			return nil, providererrors.NewErrRequestWithResponse(req, res)
-		}
-
-		return &body.Data, nil
+		return nil
 
 	default:
 		bodyErr := providererrors.Error{}
 		err := json.Unmarshal(rawBody, &bodyErr)
 		if err != nil {
-			return nil, providererrors.NewErrRequestWithResponse(req, res)
+			return providererrors.NewErrRequestWithResponse(req, res)
 		}
 
 		bodyErr.Code = res.StatusCode
-		return nil, bodyErr
+		return bodyErr
 
 	}
 }
