@@ -8,9 +8,9 @@ func (e Error) Error() string {
 
 const (
 	ErrProductAlreadyExist = Error("product already exist")
-	ErrOrderAlreadyExist   = Error("order already exist")
-	ErrOrderStockEmpty     = Error("order stock is not empty")
-	ErrOrderNotFound       = Error("order not found")
+	ErrOrderAlreadyExist   = Error("payroll already exist")
+	ErrOrderStockEmpty     = Error("payroll stock is not empty")
+	ErrOrderNotFound       = Error("payroll not found")
 	ErrUserNotFound        = Error("user not found")
 	ErrDataNotFound        = Error("data not found")
 

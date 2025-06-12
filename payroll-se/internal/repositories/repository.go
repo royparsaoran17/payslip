@@ -3,36 +3,33 @@ package repositories
 import (
 	"context"
 	"database/sql"
-	"payroll-se/internal/repositories/internal/order"
-	"payroll-se/internal/repositories/internal/orderitem"
-	"payroll-se/internal/repositories/internal/payment"
-	"payroll-se/internal/repositories/internal/product"
-	"payroll-se/internal/repositories/internal/stockreservation"
-	"payroll-se/internal/repositories/internal/user"
-	"payroll-se/internal/repositories/internal/warehouse"
+	"payroll-se/internal/repositories/internal/attendance"
+	"payroll-se/internal/repositories/internal/employee"
+	"payroll-se/internal/repositories/internal/overtime"
+	"payroll-se/internal/repositories/internal/payrollperiod"
+	"payroll-se/internal/repositories/internal/payslip"
+	"payroll-se/internal/repositories/internal/reimbursement"
 	"payroll-se/pkg/databasex"
 )
 
 type Repository struct {
-	Order            Order
-	OrderItem        OrderItem
-	Payment          Payment
-	StockReservation StockReservation
-	User             User
-	Warehouse        Warehouse
-	Product          Product
-	db               databasex.Adapter
+	Attendance    Attendance
+	Employee      Employee
+	Overtime      Overtime
+	Payslip       Payslip
+	PayrollPeriod PayrollPeriod
+	Reimbursement Reimbursement
+	db            databasex.Adapter
 }
 
 func NewRepository(db databasex.Adapter) *Repository {
 	return &Repository{
-		Order:            order.NewOrder(db),
-		Payment:          payment.NewPayment(db),
-		OrderItem:        orderitem.NewOrderItem(db),
-		StockReservation: stockreservation.NewStockReservation(db),
-		User:             user.NewUser(db),
-		Product:          product.NewProduct(db),
-		Warehouse:        warehouse.NewWarehouse(db),
+		Attendance:    attendance.NewAttendance(db),
+		Employee:      employee.NewEmployee(db),
+		Overtime:      overtime.NewOvertime(db),
+		Payslip:       payslip.NewPayslip(db),
+		PayrollPeriod: payrollperiod.NewPayrollPeriod(db),
+		Reimbursement: reimbursement.NewReimbursement(db),
 	}
 }
 

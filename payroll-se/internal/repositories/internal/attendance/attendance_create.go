@@ -38,14 +38,14 @@ func (r attendance) CreateAttendance(ctx context.Context, input presentations.At
 	tNow := time.Now().Local()
 
 	query := `
-INSERT INTO attendances (
-	id, 
-	employee_id, 
-	attendance_date, 
-	created_at, 
-	updated_at, 
-	created_by
-) VALUES ($1, $2, $3, $4, $4, $5)`
+		INSERT INTO attendances (
+			id, 
+			employee_id, 
+			attendance_date, 
+			created_at, 
+			updated_at, 
+			created_by
+		) VALUES ($1, $2, $3, $4, $4, $5)`
 
 	values := []interface{}{
 		uuid.New().String(),

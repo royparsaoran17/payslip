@@ -34,7 +34,6 @@ func TraceAndServe(h http.Handler, w http.ResponseWriter, r *http.Request, servi
 	h.ServeHTTP(w, r.WithContext(ctx))
 }
 
-
 // wrapResponseWriter wraps an underlying http.ResponseWriter so that it can
 // trace the http response codes. It also checks for various http interfaces
 // (Flusher, Pusher, CloseNotifier, Hijacker) and if the underlying
@@ -148,7 +147,6 @@ func wrapResponseWriter(w http.ResponseWriter, span opentracing.Span) http.Respo
 	return w
 }
 
-
 // responseWriter is a small wrapper around an http response writer that will
 // intercept and store the status of a request.
 type responseWriter struct {
@@ -163,7 +161,7 @@ func newResponseWriter(w http.ResponseWriter, span opentracing.Span) *responseWr
 
 // Write writes the data to the connection as part of an HTTP reply.
 // We explicitely call WriteHeader with the 200 status code
-// in order to get it reported into the span.
+// in payroll to get it reported into the span.
 func (w *responseWriter) Write(b []byte) (int, error) {
 	if w.status == 0 {
 		w.WriteHeader(http.StatusOK)

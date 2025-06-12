@@ -11,7 +11,7 @@ import (
 	"net/http"
 	"payroll-se/internal/presentations"
 	"payroll-se/internal/repositories"
-	order "payroll-se/internal/service/order"
+	"payroll-se/internal/service/payroll"
 	"payroll-se/pkg/tracer"
 	"time"
 
@@ -159,7 +159,7 @@ func (rtr *router) Route() *routerkit.Router {
 
 	// initiate services
 	var (
-		orderService = order.NewService(repo)
+		payrollService = payroll.NewService(repo)
 	)
 
 	// healthy
@@ -168,7 +168,7 @@ func (rtr *router) Route() *routerkit.Router {
 		ucase.NewHealthCheck(),
 	)).Methods(http.MethodGet)
 
-	rtr.mountOrders(orderService)
+	rtr.mountPayrolls(payrollService)
 
 	return rtr.router
 

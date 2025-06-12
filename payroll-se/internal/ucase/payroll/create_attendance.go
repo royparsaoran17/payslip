@@ -1,4 +1,4 @@
-package order
+package payroll
 
 import (
 	validation "github.com/go-ozzo/ozzo-validation/v4"
@@ -10,28 +10,28 @@ import (
 	"github.com/pkg/errors"
 	"payroll-se/internal/appctx"
 	"payroll-se/internal/presentations"
-	"payroll-se/internal/service/order"
+	"payroll-se/internal/service/payroll"
 	"payroll-se/internal/ucase/contract"
 )
 
-type orderCreate struct {
-	service order.Order
+type attendanceCreate struct {
+	service payroll.Payroll
 }
 
-func (r orderCreate) Serve(data *appctx.Data) appctx.Response {
-	ctx := tracer.SpanStart(data.Request.Context(), "usecase.order_create")
+func (r attendanceCreate) Serve(data *appctx.Data) appctx.Response {
+	ctx := tracer.SpanStart(data.Request.Context(), "usecase.attendance_create")
 	defer tracer.SpanFinish(ctx)
 
-	responder := appctx.NewResponse().WithState("orderCreate")
+	responder := appctx.NewResponse().WithState("attendanceCreate")
 
-	var input presentations.Order
+	var input presentations.AttendanceCreate
 	if err := data.Cast(&input); err != nil {
 		return *responder.WithCode(http.StatusBadRequest).
 			WithError(err.Error()).
 			WithMessage(http.StatusText(http.StatusBadRequest))
 	}
 
-	_, err := r.service.CreateOrder(ctx, input)
+	err := r.service.SubmitAttendance(ctx, input)
 	if err != nil {
 		causer := errors.Cause(err)
 		switch causer {
@@ -59,9 +59,9 @@ func (r orderCreate) Serve(data *appctx.Data) appctx.Response {
 
 	return *responder.
 		WithCode(http.StatusCreated).
-		WithMessage("order created")
+		WithMessage("attendance created")
 }
 
-func NewOrderCreate(service order.Order) contract.UseCase {
-	return &orderCreate{service: service}
+func NewAttendanceCreate(service payroll.Payroll) contract.UseCase {
+	return &attendanceCreate{service: service}
 }

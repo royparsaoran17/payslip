@@ -33,7 +33,7 @@ func (r payrollPeriod) FindPayrollPeriodByID(ctx context.Context, payrollPeriodI
 	if err != nil {
 		switch err {
 		case sql.ErrNoRows:
-			return nil, consts.ErrPayrollPeriodNotFound
+			return nil, consts.ErrDataNotFound
 		default:
 			return nil, errors.Wrap(err, "failed to fetch row from db")
 		}
