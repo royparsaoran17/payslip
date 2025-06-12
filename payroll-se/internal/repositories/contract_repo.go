@@ -8,40 +8,44 @@ import (
 	"payroll-se/internal/repositories/repooption"
 )
 
-type Order interface {
-	CreateOrder(ctx context.Context, input presentations.OrderCreate, opts ...repooption.TxOption) error
-	UpdateOrder(ctx context.Context, roleID string, input presentations.OrderUpdate, opts ...repooption.TxOption) error
-	FindOrderByID(ctx context.Context, roleID string) (*entity.Order, error)
-	GetAllOrder(ctx context.Context, userID string, meta *common.Metadata) ([]entity.Order, error)
+type Overtime interface {
+	CreateOvertime(ctx context.Context, input presentations.OvertimeCreate, opts ...repooption.TxOption) error
+	UpdateOvertime(ctx context.Context, ID string, input presentations.OvertimeUpdate, opts ...repooption.TxOption) error
+	FindOvertimeByID(ctx context.Context, ID string) (*entity.Overtime, error)
+	GetAllOvertime(ctx context.Context, meta *common.Metadata) ([]entity.Overtime, error)
 }
 
-type Product interface {
-	FindProductByID(ctx context.Context, productID string) (*entity.Product, error)
-	GetStockDetail(ctx context.Context, productID, warehouseID string) (*entity.ProductStock, error)
+type Payslip interface {
+	CreatePayslip(ctx context.Context, input presentations.PayslipCreate, opts ...repooption.TxOption) error
+	UpdatePayslip(ctx context.Context, ID string, input presentations.PayslipUpdate, opts ...repooption.TxOption) error
+	FindPayslipByID(ctx context.Context, ID string) (*entity.Payslip, error)
+	GetAllPayslip(ctx context.Context, meta *common.Metadata) ([]entity.Payslip, error)
 }
 
-type User interface {
-	FindUserByID(ctx context.Context, userID string) (*entity.User, error)
+type Reimbursement interface {
+	CreateReimbursement(ctx context.Context, input presentations.ReimbursementCreate, opts ...repooption.TxOption) error
+	UpdateReimbursement(ctx context.Context, ID string, input presentations.ReimbursementUpdate, opts ...repooption.TxOption) error
+	FindReimbursementByID(ctx context.Context, ID string) (*entity.Reimbursement, error)
+	GetAllReimbursement(ctx context.Context, meta *common.Metadata) ([]entity.Reimbursement, error)
 }
 
-type Warehouse interface {
-	GetAllWarehouse(ctx context.Context, orderID string) ([]entity.Warehouse, error)
+type PayrollPeriod interface {
+	CreatePayrollPeriod(ctx context.Context, input presentations.PayrollPeriodCreate, opts ...repooption.TxOption) error
+	UpdatePayrollPeriod(ctx context.Context, ID string, input presentations.PayrollPeriodUpdate, opts ...repooption.TxOption) error
+	FindPayrollPeriodByID(ctx context.Context, ID string) (*entity.PayrollPeriod, error)
+	GetAllPayrollPeriod(ctx context.Context, meta *common.Metadata) ([]entity.PayrollPeriod, error)
 }
 
-type Payment interface {
-	CreatePayment(ctx context.Context, input presentations.PaymentCreate, opts ...repooption.TxOption) error
-	FindPaymentByID(ctx context.Context, roleID string) (*entity.Payment, error)
-	GetAllPayment(ctx context.Context, meta *common.Metadata) ([]entity.Payment, error)
+type Employee interface {
+	CreateEmployee(ctx context.Context, input presentations.EmployeeCreate, opts ...repooption.TxOption) error
+	UpdateEmployee(ctx context.Context, ID string, input presentations.EmployeeUpdate, opts ...repooption.TxOption) error
+	FindEmployeeByID(ctx context.Context, ID string) (*entity.Employee, error)
+	GetAllEmployee(ctx context.Context, meta *common.Metadata) ([]entity.Employee, error)
 }
 
-type StockReservation interface {
-	CreateStockReservation(ctx context.Context, input presentations.StockReservationCreate, opts ...repooption.TxOption) error
-	FindStockReservationByID(ctx context.Context, roleID string) (*entity.StockReservation, error)
-	GetAllStockReservation(ctx context.Context, meta *common.Metadata) ([]entity.StockReservation, error)
-}
-
-type OrderItem interface {
-	CreateOrderItem(ctx context.Context, input presentations.OrderItemCreate, opts ...repooption.TxOption) error
-	FindOrderItemByID(ctx context.Context, roleID string) (*entity.OrderItem, error)
-	GetAllOrderItemByOrderID(ctx context.Context, orderID string) ([]entity.OrderItem, error)
+type Attendance interface {
+	CreateAttendance(ctx context.Context, input presentations.AttendanceCreate, opts ...repooption.TxOption) error
+	UpdateAttendance(ctx context.Context, ID string, input presentations.AttendanceUpdate, opts ...repooption.TxOption) error
+	FindAttendanceByID(ctx context.Context, ID string) (*entity.Attendance, error)
+	GetAllAttendance(ctx context.Context, meta *common.Metadata) ([]entity.Attendance, error)
 }

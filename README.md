@@ -19,11 +19,8 @@ This project consists of multiple microservices that work together in a modular 
 
 - **Internal Services**:  
   Services that are only accessible within the service network. These support the external services.
-    - `product-se`
-    - `warehouse-se`
-    - `order-se`
+    - `payroll-se`
     - `user-se`
-    - `shop-se`
 
 ---
 
@@ -76,30 +73,9 @@ go run main.go db:migrate up
 go run main.go http
 ```
 
-### ✅ Product Service
+### ✅ Payroll Service
 ```bash
-cd product-se
-go run main.go db:migrate up
-go run main.go http
-```
-
-### ✅ Warehouse Service
-```bash
-cd warehouse-se
-go run main.go db:migrate up
-go run main.go http
-```
-
-### ✅ Shop Service
-```bash
-cd shop-se
-go run main.go db:migrate up
-go run main.go http
-```
-
-### ✅ Order Service
-```bash
-cd order-se
+cd payroll-se
 go run main.go db:migrate up
 go run main.go http
 ```
