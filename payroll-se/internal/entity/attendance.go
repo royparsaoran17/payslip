@@ -19,3 +19,11 @@ type Attendance struct {
 	UpdatedBy      sql.NullString `json:"updated_by" db:"updated_by"`
 	DeletedBy      sql.NullString `json:"deleted_by" db:"deleted_by"`
 }
+
+type WorkDay struct {
+	TotalWorkDays int `json:"total_work_days" db:"total_work_days"`
+}
+
+type WorkAmount struct {
+	TotalAmount float64 `json:"total_amount" db:"total_amount"`
+}

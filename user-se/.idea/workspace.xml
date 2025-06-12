@@ -5,25 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83df1fc7-9655-4004-b628-f7e25079cc5b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/service/payroll/payroll_contract.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/service/payroll/payroll_service.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/ucase/payroll/create_overtime.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/ucase/payroll/create_reimbursement.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/consts/rate.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/attendance/attendance_find_by_employee.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/attendance/attendance_total_work_day.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/employee/employee_get_list.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/overtime/overtime_find_by_employee.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/payslip/payslip_find_by_period.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/payslip/payslip_get_by_employee.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/reimbursement/reimbursement_find_by_employee.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/service/employee/employee_contract.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/service/employee/employee_service.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/ucase/payroll/create_payroll_period.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/ucase/payroll/create_run_payroll.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/ucase/payroll/get_payslip_employee.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../payroll-se/internal/ucase/payroll/get_payslip_summary.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../manage-se/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../manage-se/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../payroll-se/internal/consts/error.go" beforeDir="false" afterPath="$PROJECT_DIR$/../payroll-se/internal/consts/error.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/attendance/attendance_create.go" beforeDir="false" afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/attendance/attendance_create.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/payrollperiod/payroll_period_find_by_id.go" beforeDir="false" afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/internal/payrollperiod/payroll_period_find_by_id.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../payroll-se/internal/repositories/repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/repository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../payroll-se/internal/router/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/../payroll-se/internal/router/router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../payroll-se/internal/router/router_order.go" beforeDir="false" afterPath="$PROJECT_DIR$/../payroll-se/internal/router/router_payroll.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../payroll-se/internal/service/order/order_contract.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../payroll-se/internal/service/order/order_service.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../payroll-se/internal/ucase/order/order_create.go" beforeDir="false" afterPath="$PROJECT_DIR$/../payroll-se/internal/ucase/payroll/create_attendance.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../payroll-se/internal/ucase/order/order_get_all.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../payroll-se/internal/ucase/order/order_get_by_id.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../payroll-se/internal/ucase/order/order_payment.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../payroll-se/pkg/routerkit/util.go" beforeDir="false" afterPath="$PROJECT_DIR$/../payroll-se/pkg/routerkit/util.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../payroll-se/internal/entity/attendance.go" beforeDir="false" afterPath="$PROJECT_DIR$/../payroll-se/internal/entity/attendance.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../payroll-se/internal/entity/payslip.go" beforeDir="false" afterPath="$PROJECT_DIR$/../payroll-se/internal/entity/payslip.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../payroll-se/internal/presentations/payroll_period.go" beforeDir="false" afterPath="$PROJECT_DIR$/../payroll-se/internal/presentations/payroll_period.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../payroll-se/internal/repositories/contract_repo.go" beforeDir="false" afterPath="$PROJECT_DIR$/../payroll-se/internal/repositories/contract_repo.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../payroll-se/internal/router/router_payroll.go" beforeDir="false" afterPath="$PROJECT_DIR$/../payroll-se/internal/router/router_payroll.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../payroll-se/internal/service/payroll/payroll_contract.go" beforeDir="false" afterPath="$PROJECT_DIR$/../payroll-se/internal/service/payroll/payroll_contract.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../payroll-se/internal/service/payroll/payroll_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/../payroll-se/internal/service/payroll/payroll_service.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migration/20231016193453_seed_user_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/migration/20231016193453_seed_user_table.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

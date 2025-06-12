@@ -6,6 +6,7 @@ import (
 	"payroll-se/internal/entity"
 	"payroll-se/internal/presentations"
 	"payroll-se/internal/repositories/repooption"
+	"time"
 )
 
 type Overtime interface {
@@ -13,6 +14,7 @@ type Overtime interface {
 	UpdateOvertime(ctx context.Context, ID string, input presentations.OvertimeUpdate, opts ...repooption.TxOption) error
 	FindOvertimeByID(ctx context.Context, ID string) (*entity.Overtime, error)
 	GetAllOvertime(ctx context.Context, meta *common.Metadata) ([]entity.Overtime, error)
+	FindTotalOvertimeByEmployee(ctx context.Context, employeeID string, startDate, endDate time.Time) (*entity.WorkDay, error)
 }
 
 type Payslip interface {
@@ -20,6 +22,8 @@ type Payslip interface {
 	UpdatePayslip(ctx context.Context, ID string, input presentations.PayslipUpdate, opts ...repooption.TxOption) error
 	FindPayslipByID(ctx context.Context, ID string) (*entity.Payslip, error)
 	GetAllPayslip(ctx context.Context, meta *common.Metadata) ([]entity.Payslip, error)
+	FindPayslipByPeriod(ctx context.Context, periodID string) (*entity.PayslipSummary, error)
+	GetAllByEmployee(ctx context.Context, employeeID, periodID string) ([]entity.Payslip, error)
 }
 
 type Reimbursement interface {
@@ -27,6 +31,7 @@ type Reimbursement interface {
 	UpdateReimbursement(ctx context.Context, ID string, input presentations.ReimbursementUpdate, opts ...repooption.TxOption) error
 	FindReimbursementByID(ctx context.Context, ID string) (*entity.Reimbursement, error)
 	GetAllReimbursement(ctx context.Context, meta *common.Metadata) ([]entity.Reimbursement, error)
+	FindTotalReimbursementByEmployee(ctx context.Context, employeeID string, startDate, endDate time.Time) (*entity.WorkAmount, error)
 }
 
 type PayrollPeriod interface {
@@ -41,6 +46,7 @@ type Employee interface {
 	UpdateEmployee(ctx context.Context, ID string, input presentations.EmployeeUpdate, opts ...repooption.TxOption) error
 	FindEmployeeByID(ctx context.Context, ID string) (*entity.Employee, error)
 	GetAllEmployee(ctx context.Context, meta *common.Metadata) ([]entity.Employee, error)
+	GetListEmployee(ctx context.Context) ([]entity.Employee, error)
 }
 
 type Attendance interface {
@@ -48,4 +54,6 @@ type Attendance interface {
 	UpdateAttendance(ctx context.Context, ID string, input presentations.AttendanceUpdate, opts ...repooption.TxOption) error
 	FindAttendanceByID(ctx context.Context, ID string) (*entity.Attendance, error)
 	GetAllAttendance(ctx context.Context, meta *common.Metadata) ([]entity.Attendance, error)
+	TotalWorkDay(ctx context.Context, startDate, endDate time.Time) (*entity.WorkDay, error)
+	FindTotalAttendanceByEmployee(ctx context.Context, employeeID string, startDate, endDate time.Time) (*entity.WorkDay, error)
 }

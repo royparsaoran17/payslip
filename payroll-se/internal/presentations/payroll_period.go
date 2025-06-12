@@ -5,6 +5,17 @@ import (
 	"time"
 )
 
+type RunPayroll struct {
+	PayrollPeriodID string `json:"payroll_period_id"`
+	CreatedBy       string `json:"created_by"`
+}
+
+func (p *RunPayroll) Validate() error {
+	return validation.Errors{
+		"payroll_period_id": validation.Validate(&p.PayrollPeriodID, validation.Required),
+	}.Filter()
+}
+
 type PayrollPeriodCreate struct {
 	StartDate time.Time `json:"start_date"`
 	EndDate   time.Time `json:"end_date"`

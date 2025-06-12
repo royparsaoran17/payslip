@@ -24,3 +24,11 @@ type Payslip struct {
 	UpdatedBy          sql.NullString `json:"updated_by" db:"updated_by"`
 	DeletedBy          sql.NullString `json:"deleted_by" db:"deleted_by"`
 }
+
+type PayslipSummary struct {
+	TotalEmployees      int     `json:"total_employees" db:"total_employees"`
+	TotalProratedSalary float64 `json:"total_prorated_salary" db:"total_prorated_salary"`
+	TotalOvertime       float64 `json:"total_overtime" db:"total_overtime"`
+	TotalReimbursement  float64 `json:"total_reimbursement" db:"total_reimbursement"`
+	TotalTakeHomePay    float64 `json:"total_take_home_pay" db:"total_take_home_pay"`
+}
